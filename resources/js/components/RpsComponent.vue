@@ -183,7 +183,9 @@
         name: "RpsComponent",
 
         props: [
-            'rps_id'
+            'rps_id',
+            'computerscore',
+            'humanscore'
         ],
 
         data() {
@@ -210,6 +212,8 @@
 
         mounted() {
             this.guessRPS();
+            this.computerwins = this.computerscore;
+            this.humanwins = this.humanscore;
         },
 
         computed: {

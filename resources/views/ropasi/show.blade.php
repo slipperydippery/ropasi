@@ -3,6 +3,8 @@
 @section('content')
     <rps-component
         rps_id = "{{ $ropasi->id }}"
+        computerscore = {{ $computerscore  }}
+        humanscore = {{ $humanscore  }}
     >
     </rps-component>
 

@@ -2167,7 +2167,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RpsComponent",
-  props: ['rps_id'],
+  props: ['rps_id', 'computerscore', 'humanscore'],
   data: function data() {
     return {
       nbsamplelength: 2,
@@ -2191,6 +2191,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.guessRPS();
+    this.computerwins = this.computerscore;
+    this.humanwins = this.humanscore;
   },
   computed: {
     scissorBack: function scissorBack() {

@@ -49,9 +49,15 @@ class RopasiController extends Controller
      */
     public function show(Ropasi $ropasi)
     {
+        $computerscore = 0;
+        $humanscore = 0;
+        if($ropasi->lastone) {
+            $computerscore = Result::where('winner', 1)->count();
+            $humanscore = Result::where('winner', 2)->count();
+        }
         $allresults = Result::select('winner')->get()->toJson();
         $yourresults = Result::where('ropasi_id', $ropasi->id)->select('winner')->get()->toJson();
-        return view('ropasi.show', compact('ropasi', 'allresults', 'yourresults'));
+        return view('ropasi.show', compact('ropasi', 'allresults', 'yourresults', 'computerscore', 'humanscore'));
     }
 
     /**
