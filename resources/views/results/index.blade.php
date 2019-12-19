@@ -9,7 +9,7 @@
 
     <div class="row pt-2">
         <div class="col-12">
-            <div class="h2">Graph of all results:</div>
+            <div class="h2">Graph of all computer's score (all games):</div>
             <cumulative-results-component
                 :all-results = "{{ $allresults }}"
             >
@@ -25,9 +25,10 @@
                 <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">wins</th>
-                    <th scope="col">losses</th>
+                    <th scope="col">human wins</th>
+                    <th scope="col">human loses</th>
                     <th scope="col">draws</th>
+                    <th scope="col">human score</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,6 +38,7 @@
                             <td> {{ $ropasi->results->where('winner', 2)->count()  }} </td>
                             <td> {{ $ropasi->results->where('winner', 1)->count()  }} </td>
                             <td> {{ $ropasi->results->where('winner', 0)->count()  }} </td>
+                            <td> {{ $ropasi->results->where('winner', 2)->count() - $ropasi->results->where('winner', 1)->count() }} </td>
                         </tr>
                     @endforeach
                 </tbody>
