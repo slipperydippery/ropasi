@@ -49,8 +49,8 @@ class RopasiController extends Controller
      */
     public function show(Ropasi $ropasi)
     {
-        $allresults = Result::all();
-        $yourresults = Ropasi::where('id', $ropasi->id)->with('results');
+        $allresults = Result::select('winner')->get();
+        $yourresults = Result::where('ropasi_id', $ropasi->id)->select('winner')->get();
         return view('ropasi.show', compact('ropasi', 'allresults', 'yourresults'));
     }
 

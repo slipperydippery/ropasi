@@ -11529,3 +11529,33 @@ a.text-dark:focus {
   }
 }
 
+.cumulative .stroke {
+  stroke: #fbac91;
+  stroke-width: 2;
+}
+
+.cumulative .fill {
+  fill: #fbac91;
+  opacity: 0.05;
+}
+
+.cumulative .point {
+  fill: #fbac91;
+  stroke: #fbac91;
+}
+
+.yourownresults .stroke {
+  stroke: #7fdfd4;
+  stroke-width: 2;
+}
+
+.yourownresults .fill {
+  fill: #7fdfd4;
+  opacity: 0.05;
+}
+
+.yourownresults .point {
+  fill: #7fdfd4;
+  stroke: #fbe1b6;
+}
+

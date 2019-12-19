@@ -232,7 +232,7 @@
                 this.active = false;
                 this.animating = true;
                 var home = this;
-                setTimeout(function(){ home.animating = false; }, 1000);
+                setTimeout(function(){ home.animating = false; }, 700);
                 this.sendGuess( this.calculateResult(input) );
             },
 
@@ -307,6 +307,7 @@
 
             sendGuess(result) {
                 var home = this;
+                this.$eventBus.$emit('getresults');
                 axios.patch('/api/ropasi/' + this.rps_id, {
                     guess: this.humanguess,
                     result: result,

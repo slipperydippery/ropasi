@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bb77f9b-b1b2-4559-be01-864b9d283071" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/ResultsComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/partials/_layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/partials/_results.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RopasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RopasiController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RopasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RopasiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ropasi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Ropasi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ResultsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ResultsComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/RpsComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/RpsComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/ropasi/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ropasi/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +202,7 @@
       <workItem from="1576507421436" duration="79000" />
       <workItem from="1576511885210" duration="1705000" />
       <workItem from="1576574735167" duration="30951000" />
-      <workItem from="1576744353936" duration="5022000" />
+      <workItem from="1576744353936" duration="11062000" />
     </task>
     <servers />
   </component>
@@ -232,10 +232,10 @@
     </state>
     <state x="1142" y="-915" key="SettingsEditor/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576503445888" />
     <state x="1142" y="-915" key="SettingsEditor/0.0.1280.680/679.-1080.1920.1040/-1241.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576511996872" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1576751695460">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1576759670858">
       <screen x="679" y="-1080" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576751695460" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576759670858" />
     <state width="498" height="446" key="SwitcherDM/0.0.1280.680/679.-1080.1920.1040/-1241.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576513026109" />
     <state x="1201" y="-825" key="com.intellij.ide.util.TipDialog" timestamp="1576511898626">
       <screen x="679" y="-1080" width="1920" height="1040" />
@@ -243,10 +243,14 @@
     <state x="348" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@0.0.1280.680" timestamp="1576501051479" />
     <state x="1201" y="-825" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576507421826" />
     <state x="1201" y="-825" key="com.intellij.ide.util.TipDialog/0.0.1280.680/679.-1080.1920.1040/-1241.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576511898626" />
-    <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1576750936075">
+    <state x="1269" y="-987" width="740" height="894" key="find.popup" timestamp="1576753635311">
       <screen x="679" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576750936075" />
+    <state x="1269" y="-987" width="740" height="894" key="find.popup/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576753635311" />
+    <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1576759480954">
+      <screen x="679" y="-1080" width="1920" height="1040" />
+    </state>
+    <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576759480954" />
     <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup/0.0.1280.680/679.-1080.1920.1040/-1241.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576513017782" />
   </component>
 </project>

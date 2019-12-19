@@ -8,6 +8,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import TrendChart from "vue-trend-chart";
+Vue.use(TrendChart);
+
+Vue.prototype.$eventBus = new Vue(); // Global event bus
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

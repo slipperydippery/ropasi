@@ -5,9 +5,11 @@
         rps_id = "{{ $ropasi->id }}"
     >
     </rps-component>
+
     <results-component
-        all-results = "{{ json_encode( $allresults ) }}"
-        your-results = "{{ json_encode( $yourresults )  }}"
+        rps_id = "{{ $ropasi->id }}"
+        :all-results = "{{ $allresults }}"
+        :your-results = "{{ $yourresults  }}"
     >
     </results-component>
     <div class="container">
