@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bb77f9b-b1b2-4559-be01-864b9d283071" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RopasiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RopasiController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -190,7 +191,7 @@
       <workItem from="1576507421436" duration="79000" />
       <workItem from="1576511885210" duration="1705000" />
       <workItem from="1576574735167" duration="30951000" />
-      <workItem from="1576744353936" duration="15465000" />
+      <workItem from="1576744353936" duration="15630000" />
     </task>
     <servers />
   </component>
@@ -235,10 +236,10 @@
     <state x="348" y="167" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@0.0.1280.680" timestamp="1576501051479" />
     <state x="1201" y="-825" key="com.intellij.ide.util.TipDialog/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576507421826" />
     <state x="1201" y="-825" key="com.intellij.ide.util.TipDialog/0.0.1280.680/679.-1080.1920.1040/-1241.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576511898626" />
-    <state x="1269" y="-987" width="740" height="894" key="find.popup" timestamp="1576753635311">
+    <state x="1269" y="-987" width="740" height="894" key="find.popup" timestamp="1576764522114">
       <screen x="679" y="-1080" width="1920" height="1040" />
     </state>
-    <state x="1269" y="-987" width="740" height="894" key="find.popup/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576753635311" />
+    <state x="1269" y="-987" width="740" height="894" key="find.popup/0.0.1280.680/-1241.-1080.1920.1040/679.-1080.1920.1040@679.-1080.1920.1040" timestamp="1576764522114" />
     <state x="1302" y="-855" width="672" height="678" key="search.everywhere.popup" timestamp="1576763554222">
       <screen x="679" y="-1080" width="1920" height="1040" />
     </state>
