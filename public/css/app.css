@@ -11356,6 +11356,11 @@ a.text-dark:focus {
   }
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .rps-component {
   height: 70vh;
 }
@@ -11373,22 +11378,22 @@ a.text-dark:focus {
   display: none;
 }
 
-.depthviewer {
+.options {
   position: absolute;
   bottom: 0vw;
   left: 0vw;
 }
 
-.depthviewer .choice {
+.options .choice {
   padding: 0.7vw 1vw;
   background: #D2D2D2;
 }
 
-.depthviewer .choice:hover {
+.options .choice:hover {
   background: #afafaf;
 }
 
-.depthviewer .activechoice {
+.options .activechoice {
   background: #ababab;
 }
 

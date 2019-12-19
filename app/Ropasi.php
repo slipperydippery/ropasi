@@ -17,7 +17,7 @@ class Ropasi extends Model
         return $this->hasMany(Result::class);
     }
 
-    public static function calculatewin($ropasi, $samplelength)
+    public static function calculatewin($ropasi, $samplelength, $ownorall)
     {
         $lengthcolum = '';
         switch($samplelength) {
@@ -35,7 +35,14 @@ class Ropasi extends Model
         }
         $samples = [];
         $labels = [];
-        foreach(Result::all() as $result){
+
+        $ownorallarray = Result::where('ropasi_id', $ropasi->id)->get();
+
+        if($ownorall == 'all' || $ownorallarray->count() < 5) {
+            $ownorallarray = Result::all();
+        }
+
+        foreach($ownorallarray as $result){
             $samples[] = unserialize($result->$lengthcolum);
             $labels[] = $result->nexthumanmove;
         }

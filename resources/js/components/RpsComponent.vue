@@ -158,11 +158,19 @@
                 <span class="wincounter">{{ humanwins }}</span>
             </div>
         </div>
-        <div class="depthviewer d-flex ">
-            <div @click="setActivechoice(1)" class="choice clickable" :class="{'activechoice': nbsamplelength == 1}">1</div>
-            <div @click="setActivechoice(2)" class="choice clickable" :class="{'activechoice': nbsamplelength == 2}">2</div>
-            <div @click="setActivechoice(3)" class="choice clickable" :class="{'activechoice': nbsamplelength == 3}">3</div>
-            <div @click="setActivechoice(10)" class="choice clickable" :class="{'activechoice': nbsamplelength == 10}">full</div>
+        <div class="options d-flex">
+            <div class="depthviewer d-flex px-2">
+                <div @click="setActivechoice(1)" class="choice clickable" :class="{'activechoice': nbsamplelength == 1}">1</div>
+                <div @click="setActivechoice(2)" class="choice clickable" :class="{'activechoice': nbsamplelength == 2}">2</div>
+                <div @click="setActivechoice(3)" class="choice clickable" :class="{'activechoice': nbsamplelength == 3}">3</div>
+                <div @click="setActivechoice(10)" class="choice clickable" :class="{'activechoice': nbsamplelength == 10}">full</div>
+            </div>
+            <div class="ownorall d-flex px-2">
+                <div @click="setComparison('all')" class="choice clickable" :class="{'activechoice': ownorall == 'all'}"> vs all results </div>
+                <div @click="setComparison('own')" class="choice clickable" :class="{'activechoice': ownorall == 'own'}"> vs your results </div>
+            </div>
+
+
         </div>
         <div class="resultnotification scale-in-center" v-if="animating">
             <span class="humanresult" :class="{ 'win': result == 'win', 'lose': result == 'lose', 'tie': result == 'tie' }"> {{ humanresult }} </span>
@@ -181,6 +189,7 @@
         data() {
             return {
                 nbsamplelength: 2,
+                ownorall: 'all',
                 active: true,
                 animating: false,
                 calculatedguess: null,
@@ -205,21 +214,21 @@
 
         computed: {
             scissorBack() {
-                if(this.guiresult.scissors == 'tie'){return 'tie'}
-                if(this.humanguess == 3) { return 'humanguess' }
-                if(this.computerguess == 3) { return 'computerguess' }
+                if(this.animating && this.guiresult.scissors == 'tie'){return 'tie'}
+                if(this.animating && this.humanguess == 3) { return 'humanguess' }
+                if(this.animating && this.computerguess == 3) { return 'computerguess' }
             },
 
             paperBack() {
-                if(this.guiresult.paper == 'tie'){return 'tie'}
-                if(this.humanguess == 2) { return 'humanguess' }
-                if(this.computerguess == 2) { return 'computerguess' }
+                if(this.animating && this.guiresult.paper == 'tie'){return 'tie'}
+                if(this.animating && this.humanguess == 2) { return 'humanguess' }
+                if(this.animating && this.computerguess == 2) { return 'computerguess' }
             },
 
             rockBack() {
-                if(this.guiresult.rock == 'tie'){return 'tie'}
-                if(this.humanguess == 1) { return 'humanguess' }
-                if(this.computerguess == 1) { return 'computerguess' }
+                if(this.animating && this.guiresult.rock == 'tie'){return 'tie'}
+                if(this.animating && this.humanguess == 1) { return 'humanguess' }
+                if(this.animating && this.computerguess == 1) { return 'computerguess' }
             },
         },
 
@@ -311,7 +320,8 @@
                 axios.patch('/api/ropasi/' + this.rps_id, {
                     guess: this.humanguess,
                     result: result,
-                    nbsamplelength: this.nbsamplelength
+                    nbsamplelength: this.nbsamplelength,
+                    ownorall: this.ownorall,
                 })
                     .then( response => {
                         var number = response.data;
@@ -347,7 +357,11 @@
 
             setActivechoice(choice) {
                 this.nbsamplelength = choice;
-            }
+            },
+
+            setComparison(choice) {
+                this.ownorall = choice;
+            },
         }
     }
 </script>

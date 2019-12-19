@@ -2157,12 +2157,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RpsComponent",
   props: ['rps_id'],
   data: function data() {
     return {
       nbsamplelength: 2,
+      ownorall: 'all',
       active: true,
       animating: false,
       calculatedguess: null,
@@ -2185,41 +2194,41 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     scissorBack: function scissorBack() {
-      if (this.guiresult.scissors == 'tie') {
+      if (this.animating && this.guiresult.scissors == 'tie') {
         return 'tie';
       }
 
-      if (this.humanguess == 3) {
+      if (this.animating && this.humanguess == 3) {
         return 'humanguess';
       }
 
-      if (this.computerguess == 3) {
+      if (this.animating && this.computerguess == 3) {
         return 'computerguess';
       }
     },
     paperBack: function paperBack() {
-      if (this.guiresult.paper == 'tie') {
+      if (this.animating && this.guiresult.paper == 'tie') {
         return 'tie';
       }
 
-      if (this.humanguess == 2) {
+      if (this.animating && this.humanguess == 2) {
         return 'humanguess';
       }
 
-      if (this.computerguess == 2) {
+      if (this.animating && this.computerguess == 2) {
         return 'computerguess';
       }
     },
     rockBack: function rockBack() {
-      if (this.guiresult.rock == 'tie') {
+      if (this.animating && this.guiresult.rock == 'tie') {
         return 'tie';
       }
 
-      if (this.humanguess == 1) {
+      if (this.animating && this.humanguess == 1) {
         return 'humanguess';
       }
 
-      if (this.computerguess == 1) {
+      if (this.animating && this.computerguess == 1) {
         return 'computerguess';
       }
     }
@@ -2364,7 +2373,8 @@ __webpack_require__.r(__webpack_exports__);
       axios.patch('/api/ropasi/' + this.rps_id, {
         guess: this.humanguess,
         result: result,
-        nbsamplelength: this.nbsamplelength
+        nbsamplelength: this.nbsamplelength,
+        ownorall: this.ownorall
       }).then(function (response) {
         var number = response.data;
         var guide = String(number).charAt(4);
@@ -2401,6 +2411,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     setActivechoice: function setActivechoice(choice) {
       this.nbsamplelength = choice;
+    },
+    setComparison: function setComparison(choice) {
+      this.ownorall = choice;
     }
   }
 });
@@ -38170,62 +38183,94 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "depthviewer d-flex " }, [
-      _c(
-        "div",
-        {
-          staticClass: "choice clickable",
-          class: { activechoice: _vm.nbsamplelength == 1 },
-          on: {
-            click: function($event) {
-              return _vm.setActivechoice(1)
+    _c("div", { staticClass: "options d-flex" }, [
+      _c("div", { staticClass: "depthviewer d-flex px-2" }, [
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.nbsamplelength == 1 },
+            on: {
+              click: function($event) {
+                return _vm.setActivechoice(1)
+              }
             }
-          }
-        },
-        [_vm._v("1")]
-      ),
+          },
+          [_vm._v("1")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.nbsamplelength == 2 },
+            on: {
+              click: function($event) {
+                return _vm.setActivechoice(2)
+              }
+            }
+          },
+          [_vm._v("2")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.nbsamplelength == 3 },
+            on: {
+              click: function($event) {
+                return _vm.setActivechoice(3)
+              }
+            }
+          },
+          [_vm._v("3")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.nbsamplelength == 10 },
+            on: {
+              click: function($event) {
+                return _vm.setActivechoice(10)
+              }
+            }
+          },
+          [_vm._v("full")]
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "choice clickable",
-          class: { activechoice: _vm.nbsamplelength == 2 },
-          on: {
-            click: function($event) {
-              return _vm.setActivechoice(2)
+      _c("div", { staticClass: "ownorall d-flex px-2" }, [
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.ownorall == "all" },
+            on: {
+              click: function($event) {
+                return _vm.setComparison("all")
+              }
             }
-          }
-        },
-        [_vm._v("2")]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "choice clickable",
-          class: { activechoice: _vm.nbsamplelength == 3 },
-          on: {
-            click: function($event) {
-              return _vm.setActivechoice(3)
+          },
+          [_vm._v(" vs all results ")]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "choice clickable",
+            class: { activechoice: _vm.ownorall == "own" },
+            on: {
+              click: function($event) {
+                return _vm.setComparison("own")
+              }
             }
-          }
-        },
-        [_vm._v("3")]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "choice clickable",
-          class: { activechoice: _vm.nbsamplelength == 10 },
-          on: {
-            click: function($event) {
-              return _vm.setActivechoice(10)
-            }
-          }
-        },
-        [_vm._v("full")]
-      )
+          },
+          [_vm._v(" vs your results ")]
+        )
+      ])
     ]),
     _vm._v(" "),
     _vm.animating
