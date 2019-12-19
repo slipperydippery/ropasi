@@ -191,7 +191,7 @@
         data() {
             return {
                 nbsamplelength: 2,
-                ownorall: 'all',
+                ownorall: 'own',
                 active: true,
                 animating: false,
                 calculatedguess: null,

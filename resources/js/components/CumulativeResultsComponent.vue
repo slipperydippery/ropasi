@@ -1,14 +1,14 @@
 <template>
     <div class="row results-component">
-        <div class="col-12  h-100" v-if="yourownresults.length > 1">
+        <div class="col-12  h-100" v-if="cumulative.length">
             <TrendChart
                 :datasets="[
                     {
-                        data: yourownresults,
+                        data: cumulative,
                         smooth: true,
                         fill: true,
-                        className: 'yourownresults'
-                    }
+                        className: 'cumulative'
+                    },
                 ]"
                 :grid="{
                     verticalLines: false,
@@ -28,7 +28,7 @@
 
 <script>
     export default {
-        name: "ResultsComponent",
+        name: "CumulativeResultsComponent",
 
         props: [
             'rps_id',
@@ -48,8 +48,8 @@
         },
 
         mounted() {
-            // this.computeCumulative(this.allResults)
-            this.computeYourOwnResults(this.yourResults)
+            this.computeCumulative(this.allResults)
+            // this.computeYourOwnResults(this.yourResults)
         },
 
         methods: {
@@ -93,10 +93,10 @@
 
             getResults() {
                 axios.get('/api/ropasi/' + this.rps_id)
-                .then( response => {
-                    this.computeCumulative( response.data[0] )
-                    this.computeYourOwnResults( response.data[1] )
-                } )
+                    .then( response => {
+                        this.computeCumulative( response.data[0] )
+                        this.computeYourOwnResults( response.data[1] )
+                    } )
             }
         }
     }

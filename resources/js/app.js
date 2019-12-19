@@ -28,6 +28,7 @@ Vue.prototype.$eventBus = new Vue(); // Global event bus
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('rps-component', require('./components/RpsComponent.vue').default);
 Vue.component('results-component', require('./components/ResultsComponent').default);
+Vue.component('cumulative-results-component', require('./components/CumulativeResultsComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
