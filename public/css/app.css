@@ -11356,6 +11356,14 @@ a.text-dark:focus {
   }
 }
 
+.rps-component {
+  height: 70vh;
+}
+
+.results-component {
+  height: 23vh;
+}
+
 .enabled.clickable,
 .choice.clickable {
   cursor: pointer;

@@ -12,6 +12,11 @@ class Ropasi extends Model
     protected $casts = [
     ];
 
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
+
     public static function calculatewin($ropasi, $samplelength)
     {
         $lengthcolum = '';

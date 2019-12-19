@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ropasi;
+use App\Result;
 use Illuminate\Http\Request;
 
 class RopasiController extends Controller
@@ -48,7 +49,9 @@ class RopasiController extends Controller
      */
     public function show(Ropasi $ropasi)
     {
-        return view('ropasi.show', compact('ropasi'));
+        $allresults = Result::all();
+        $yourresults = Ropasi::where('id', $ropasi->id)->with('results');
+        return view('ropasi.show', compact('ropasi', 'allresults', 'yourresults'));
     }
 
     /**

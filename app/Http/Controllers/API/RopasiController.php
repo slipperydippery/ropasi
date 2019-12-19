@@ -78,6 +78,11 @@ class RopasiController extends Controller
 
         if(Result::all()->count() > 5){
             $guide = Ropasi::calculatewin($ropasi, $request['nbsamplelength']);
+            $prerandom = rand ( 1000, 9999 ) * 1000;
+            $guide = $guide * 100;
+            $postrandom = rand ( 10, 99);
+
+            $guide = $guide + $prerandom + $postrandom;
             return $guide;
         }
         return null;

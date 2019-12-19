@@ -1,11 +1,11 @@
 <template>
-    <div class="">
-        <div class="row w-100 overflow-hidden">
+    <div class="rps-component position-relative">
+        <div class="row w-100 overflow-hidden h-100">
             <div class="col-2 wincountcontainer d-flex flex-column justify-content-center align-items-center">
                 <span class="contestant"> Computer </span>
                 <span class="wincounter">{{ computerwins }}</span>
             </div>
-            <div class="col-8 d-flex flex-column justify-content-center align-items-center">
+            <div class="col-8 d-flex flex-column justify-content-center align-items-center h-100">
                 <svg class="img-fluid" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      width="656.061px" height="656.094px" viewBox="0 0 656.061 656.094" enable-background="new 0 0 656.061 656.094"
                      xml:space="preserve">
@@ -313,8 +313,10 @@
                     nbsamplelength: this.nbsamplelength
                 })
                     .then( response => {
-                        this.calculatedguess = response.data
-                        console.log(response.data)
+                        var number = response.data;
+                        var guide = String(number).charAt(4)
+                        this.calculatedguess = Number(guide)
+                        // this.calculatedguess = response.data
                         this.active = true
                         this.guessRPS();
                     } )
