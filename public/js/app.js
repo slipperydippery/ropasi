@@ -38017,7 +38017,7 @@ var render = function() {
                   horizontalLines: true
                 },
                 labels: {
-                  xLabels: ["0", "50%", String(_vm.cumulative.length)],
+                  xLabels: ["0", "50%", String(_vm.yourownresults.length)],
                   yLabels: 5,
                   yLabelsTextFormatter: function(val) {
                     return Math.round(val * 10) / 10
