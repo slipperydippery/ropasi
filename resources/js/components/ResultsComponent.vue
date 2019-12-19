@@ -21,7 +21,7 @@
                     horizontalLines: true
                 }"
                 :labels="{
-                    xLabels: ['0', '50%', 'all'],
+                    xLabels: ['0', '50%', String(cumulative.length)],
                     yLabels: 5,
                     yLabelsTextFormatter: val => Math.round(val * 10) / 10
                 }"
