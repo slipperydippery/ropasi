@@ -11361,6 +11361,12 @@ body {
   overflow-x: hidden;
 }
 
+.toresults {
+  position: absolute;
+  top: 0.5vh;
+  right: 0.5vw;
+}
+
 .rps-component {
   height: 70vh;
 }

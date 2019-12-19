@@ -13,6 +13,8 @@
 
 Route::get('/', 'RopasiController@index');
 
+Route::get('/results', 'ResultsController@index')->name('results');
+
 
 Route::resource('ropasi', 'RopasiController');
 

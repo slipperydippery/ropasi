@@ -1868,15 +1868,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CumulativeResultsComponent",
-  props: ['rps_id', 'allResults', 'yourResults'],
+  props: ['allResults'],
   data: function data() {
     return {
-      'cumulative': [],
-      'yourownresults': []
+      'cumulative': []
     };
-  },
-  created: function created() {
-    this.$eventBus.$on('getresults', this.getResults);
   },
   mounted: function mounted() {
     this.computeCumulative(this.allResults); // this.computeYourOwnResults(this.yourResults)
@@ -1901,26 +1897,6 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
       this.cumulative = cumulative;
-    },
-    computeYourOwnResults: function computeYourOwnResults(yourResults) {
-      var yourownresults = [];
-      var sum = 0;
-      yourResults.forEach(function (result) {
-        switch (result.winner) {
-          case 0:
-            yourownresults.push(sum);
-            break;
-
-          case 1:
-            yourownresults.push(sum++);
-            break;
-
-          case 2:
-            yourownresults.push(sum--);
-            break;
-        }
-      });
-      this.yourownresults = yourownresults;
     },
     getResults: function getResults() {
       var _this = this;

@@ -31,20 +31,13 @@
         name: "CumulativeResultsComponent",
 
         props: [
-            'rps_id',
             'allResults',
-            'yourResults'
         ],
 
         data() {
             return {
                 'cumulative': [],
-                'yourownresults': []
             }
-        },
-
-        created() {
-            this.$eventBus.$on('getresults', this.getResults)
         },
 
         mounted() {
@@ -70,25 +63,6 @@
                     }
                 } )
                 this.cumulative = cumulative
-            },
-
-            computeYourOwnResults(yourResults) {
-                var yourownresults = []
-                var sum = 0
-                yourResults.forEach( result => {
-                    switch(result.winner){
-                        case 0:
-                            yourownresults.push(sum)
-                            break
-                        case 1:
-                            yourownresults.push(sum++)
-                            break
-                        case 2:
-                            yourownresults.push(sum--)
-                            break
-                    }
-                } )
-                this.yourownresults = yourownresults
             },
 
             getResults() {
