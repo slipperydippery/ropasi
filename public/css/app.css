@@ -11397,7 +11397,7 @@ a.text-dark:focus {
   fill: #3E9E7E;
 }
 
-.ropasicontainer .ropasiback.loose {
+.ropasicontainer .ropasiback.lose {
   fill: #F0716C;
 }
 
@@ -11441,7 +11441,7 @@ a.text-dark:focus {
   border: 4px solid #3E9E7E;
 }
 
-.loose {
+.lose {
   color: #F0716C;
   border: 4px solid #F0716C;
 }
