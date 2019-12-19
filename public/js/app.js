@@ -37869,7 +37869,7 @@ var render = function() {
                   }
                 ],
                 grid: {
-                  verticalLines: true,
+                  verticalLines: false,
                   horizontalLines: true
                 },
                 labels: {

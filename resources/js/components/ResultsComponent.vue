@@ -17,7 +17,7 @@
                     }
                 ]"
                 :grid="{
-                    verticalLines: true,
+                    verticalLines: false,
                     horizontalLines: true
                 }"
                 :labels="{
