@@ -21,7 +21,6 @@
                 }"
                 :min="0">
             </TrendChart>
-
         </div>
     </div>
 </template>

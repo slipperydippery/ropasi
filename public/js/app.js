@@ -1981,7 +1981,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ResultsComponent",
   props: ['rps_id', 'allResults', 'yourResults'],
@@ -2314,7 +2313,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     inputrps: function inputrps(input) {
-      if (!this.active) {
+      if (!this.active || this.animating) {
         return;
       } // this.calculatedguess = null;
 
@@ -38315,7 +38314,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "options d-flex" }, [
-      _c("div", { staticClass: "depthviewer d-flex px-2" }, [
+      _c("div", { staticClass: "depthviewer d-flex p-2" }, [
         _c(
           "div",
           {
@@ -38373,7 +38372,7 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "ownorall d-flex px-2" }, [
+      _c("div", { staticClass: "ownorall d-flex p-2" }, [
         _c(
           "div",
           {

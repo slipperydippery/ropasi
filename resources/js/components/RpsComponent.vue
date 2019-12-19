@@ -159,13 +159,13 @@
             </div>
         </div>
         <div class="options d-flex">
-            <div class="depthviewer d-flex px-2">
+            <div class="depthviewer d-flex p-2">
                 <div @click="setActivechoice(1)" class="choice clickable" :class="{'activechoice': nbsamplelength == 1}">1</div>
                 <div @click="setActivechoice(2)" class="choice clickable" :class="{'activechoice': nbsamplelength == 2}">2</div>
                 <div @click="setActivechoice(3)" class="choice clickable" :class="{'activechoice': nbsamplelength == 3}">3</div>
                 <div @click="setActivechoice(10)" class="choice clickable" :class="{'activechoice': nbsamplelength == 10}">full</div>
             </div>
-            <div class="ownorall d-flex px-2">
+            <div class="ownorall d-flex p-2">
                 <div @click="setComparison('all')" class="choice clickable" :class="{'activechoice': ownorall == 'all'}"> vs all results </div>
                 <div @click="setComparison('own')" class="choice clickable" :class="{'activechoice': ownorall == 'own'}"> vs your results </div>
             </div>
@@ -238,7 +238,9 @@
 
         methods: {
             inputrps(input){
-                if(! this.active ) { return}
+                if(! this.active || this.animating) {
+                    return
+                }
                 // this.calculatedguess = null;
                 this.humanguess = input;
                 this.computerguess = this.nextguess;
