@@ -2315,8 +2315,7 @@ __webpack_require__.r(__webpack_exports__);
     inputrps: function inputrps(input) {
       if (!this.active || this.animating) {
         return;
-      } // this.calculatedguess = null;
-
+      }
 
       this.humanguess = input;
       this.computerguess = this.nextguess;

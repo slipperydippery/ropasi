@@ -36,10 +36,10 @@ class Ropasi extends Model
         $samples = [];
         $labels = [];
 
-        $ownorallarray = Result::where('ropasi_id', $ropasi->id)->get();
+        $ownorallarray = Result::where('ropasi_id', $ropasi->id)->orderBy('id', 'desc')->get();
 
         if($ownorall == 'all' || $ownorallarray->count() < 5) {
-            $ownorallarray = Result::all();
+            $ownorallarray = Result::all()->orderBy('id', 'desc');
         }
 
         foreach($ownorallarray as $result){

@@ -241,7 +241,6 @@
                 if(! this.active || this.animating) {
                     return
                 }
-                // this.calculatedguess = null;
                 this.humanguess = input;
                 this.computerguess = this.nextguess;
                 this.active = false;
