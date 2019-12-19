@@ -1,0 +1,49 @@
+.depthviewer {
+    position: absolute;
+    bottom: 0vw;
+    left: 0vw;
+    .choice {
+        padding: .7vw 1vw;
+        background: #D2D2D2;
+    }
+    .choice:hover {
+        background: #afafaf;
+    }
+    .activechoice {
+        background: #ababab;
+    }
+}
+
+.ropasicontainer {
+    .ropasiback {
+        fill: #D2D2D2; // gray
+    }
+    .ropasiback:hover {
+        transition: all .5s;
+    }
+    .ropasiback.win{
+        fill: #3E9E7E; // green
+    }
+    .ropasiback.loose {
+        fill: #F0716C //red
+    }
+    .ropasiback.tie {
+        fill: #FFDA55; // yellow
+    }
+    .ropasiback.humanguess {
+        fill: #79bcff; // bleu
+    }
+    .ropasiback.computerguess {
+        fill: #F0716C //red
+    }
+}
+
+.ropasicontainer.enabled:hover > .ropasiback {
+    fill: #459ad2; // bleu
+}
+
+.wincounter {
+    font-size: 4rem;
+}
+
+
