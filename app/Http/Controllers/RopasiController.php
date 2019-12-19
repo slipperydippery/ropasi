@@ -52,8 +52,8 @@ class RopasiController extends Controller
         $computerscore = 0;
         $humanscore = 0;
         if($ropasi->lastone) {
-            $computerscore = Result::where('winner', 1)->count();
-            $humanscore = Result::where('winner', 2)->count();
+            $computerscore = Result::where('id', $ropasi->id)->where('winner', 1)->count();
+            $humanscore = Result::where('id', $ropasi->id)->where('winner', 2)->count();
         }
         $allresults = Result::select('winner')->get()->toJson();
         $yourresults = Result::where('ropasi_id', $ropasi->id)->select('winner')->get()->toJson();
