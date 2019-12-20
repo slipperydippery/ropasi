@@ -37,12 +37,9 @@ class Ropasi extends Model
         $labels = [];
 
         $ownorallarray = Result::orderBy('id', 'desc')->where('ropasi_id', $ropasi->id)->get();
-//        $ownorallarray = Result::where('ropasi_id', $ropasi->id)->get();
 
         if($ownorall == 'all' || $ownorallarray->count() < 5) {
             $ownorallarray = Result::orderBy('id', 'desc')->get();
-//            dd($ownorallarray);
-//            $ownorallarray = Result::all();
         }
 
         foreach($ownorallarray as $result){

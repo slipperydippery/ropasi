@@ -70,9 +70,6 @@ class RopasiController extends Controller
         }
         array_unshift($allguesses, $request['result']);
         $ropasi->allguesses = serialize($allguesses);
-//        $ropasi->lastthree = serialize(array_slice($allguesses, -3, 3, false));
-//        $ropasi->lasttwo = serialize(array_slice($allguesses, -2, 2, false));
-//        $ropasi->lastone = serialize(array_slice($allguesses, -1, 1, false));
         $ropasi->lastthree = serialize(array_slice($allguesses, 0, 3, false));
         $ropasi->lasttwo = serialize(array_slice($allguesses, 0, 2, false));
         $ropasi->lastone = serialize(array_slice($allguesses, 0, 1, false));

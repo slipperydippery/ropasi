@@ -1866,6 +1866,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CumulativeResultsComponent",
   props: ['allResults'],
@@ -38157,6 +38159,10 @@ var render = function() {
           "div",
           { staticClass: "col-12  h-100" },
           [
+            _c("div", { staticClass: "h2" }, [
+              _vm._v("Graph of all computer's score (all rounds):")
+            ]),
+            _vm._v(" "),
             _c("TrendChart", {
               attrs: {
                 datasets: [

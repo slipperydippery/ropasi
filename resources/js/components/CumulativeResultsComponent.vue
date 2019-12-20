@@ -1,6 +1,8 @@
 <template>
     <div class="row results-component">
         <div class="col-12  h-100" v-if="cumulative.length">
+
+            <div class="h2">Graph of all computer's score (all rounds):</div>
             <TrendChart
                 :datasets="[
                     {

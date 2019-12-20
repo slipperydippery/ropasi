@@ -9,7 +9,6 @@
 
     <div class="row pt-2">
         <div class="col-12">
-            <div class="h2">Graph of all computer's score (all rounds):</div>
             <cumulative-results-component
                 :all-results = "{{ $allresults }}"
             >

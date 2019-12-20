@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="toresults">
-        <a href="{{ route('results') }}" class="btn btn-primary"> show all results</a>
+        <a href="{{ route('results') }}" class="btn btn-primary"> show all results </a>
     </div>
     <rps-component
         rps_id = "{{ $ropasi->id }}"
