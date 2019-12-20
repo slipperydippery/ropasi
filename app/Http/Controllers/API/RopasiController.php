@@ -78,7 +78,7 @@ class RopasiController extends Controller
         $ropasi->lastone = serialize(array_slice($allguesses, 0, 1, false));
         $ropasi->save();
 
-        if(Result::all()->count() > 5){
+        if(Ropasi::all()->count() > 2){
             $guide = Ropasi::calculatewin($ropasi, $request['nbsamplelength'], $request['ownorall']);
             $prerandom = rand ( 1000, 9999 ) * 1000;
             $guide = $guide * 100;
