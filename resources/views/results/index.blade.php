@@ -9,7 +9,7 @@
 
     <div class="row pt-2">
         <div class="col-12">
-            <div class="h2">Graph of all computer's score (all games):</div>
+            <div class="h2">Graph of all computer's score (all rounds):</div>
             <cumulative-results-component
                 :all-results = "{{ $allresults }}"
             >
@@ -41,6 +41,20 @@
                             <td> {{ $ropasi->results->where('winner', 2)->count() - $ropasi->results->where('winner', 1)->count() }} </td>
                         </tr>
                     @endforeach
+                    <tr class="bg-primary">
+                        <td scope="row" >total</td>
+                        <td> {{ $allresults->where('winner', 2)->count()  }} </td>
+                        <td> {{ $allresults->where('winner', 1)->count()  }} </td>
+                        <td> {{ $allresults->where('winner', 0)->count()  }} </td>
+                        <td> {{ $allresults->where('winner', 2)->count() -  $allresults->where('winner', 1)->count()  }} </td>
+                    </tr>
+                    <tr class="bg-primary">
+                        <td scope="row" >percentage</td>
+                        <td> {{ round($allresults->where('winner', 2)->count() * 100 / $allresults->count(), 2)  }} </td>
+                        <td> {{ round($allresults->where('winner', 1)->count() * 100 / $allresults->count(), 2)    }} </td>
+                        <td> {{ round($allresults->where('winner', 0)->count() * 100 / $allresults->count(), 2)    }} </td>
+                        <td> -- </td>
+                    </tr>
                 </tbody>
             </table>
 

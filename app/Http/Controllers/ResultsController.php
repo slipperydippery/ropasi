@@ -15,7 +15,7 @@ class ResultsController extends Controller
      */
     public function index()
     {
-        $allresults = Result::select('winner')->get()->toJson();
+        $allresults = Result::select('winner')->get();
         $allropasis = Ropasi::with('results')->get();
         return view('results.index', compact('allresults', 'allropasis'));
     }
