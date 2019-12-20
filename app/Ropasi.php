@@ -19,9 +19,6 @@ class Ropasi extends Model
 
     public static function calculatewin($ropasi, $samplelength, $ownorall)
     {
-        if($ropasi->allguesses == null) {
-            return;
-        }
         $lengthcolum = '';
         switch($samplelength) {
             case 1:
@@ -50,10 +47,14 @@ class Ropasi extends Model
             $labels[] = $result->nexthumanmove;
         }
 
-        $classifier = new NaiveBayes();
-        $classifier->train($samples, $labels);
+        if(count($samples) > 2){
+            $classifier = new NaiveBayes();
+            $classifier->train($samples, $labels);
 
-        return $classifier->predict( unserialize($ropasi->$lengthcolum) );
+            return $classifier->predict( unserialize($ropasi->$lengthcolum) );
+        }
+        return null;
+
     }
 
     public static function winner($input)
