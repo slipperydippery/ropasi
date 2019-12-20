@@ -19,6 +19,9 @@ class Ropasi extends Model
 
     public static function calculatewin($ropasi, $samplelength, $ownorall)
     {
+        if($ropasi->allguesses == null) {
+            return
+        }
         $lengthcolum = '';
         switch($samplelength) {
             case 1:
