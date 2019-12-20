@@ -36,10 +36,12 @@ class Ropasi extends Model
         $samples = [];
         $labels = [];
 
-        $ownorallarray = Result::orderBy('id', 'desc')->where('ropasi_id', $ropasi->id)->get();
+//        $ownorallarray = Result::orderBy('id', 'desc')->where('ropasi_id', $ropasi->id)->get();
+        $ownorallarray = Result::where('ropasi_id', $ropasi->id)->get();
 
         if($ownorall == 'all' || $ownorallarray->count() < 5) {
-            $ownorallarray = Result::orderBy('id', 'desc')->get();
+//            $ownorallarray = Result::orderBy('id', 'desc')->get();
+            $ownorallarray = Result::all();
         }
 
         foreach($ownorallarray as $result){
@@ -47,14 +49,10 @@ class Ropasi extends Model
             $labels[] = $result->nexthumanmove;
         }
 
-        if(count($samples) > 2){
-            $classifier = new NaiveBayes();
-            $classifier->train($samples, $labels);
+        $classifier = new NaiveBayes();
+        $classifier->train($samples, $labels);
 
-            return $classifier->predict( unserialize($ropasi->$lengthcolum) );
-        }
-        return null;
-
+        return $classifier->predict( unserialize($ropasi->$lengthcolum) );
     }
 
     public static function winner($input)
