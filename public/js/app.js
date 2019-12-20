@@ -38269,7 +38269,7 @@ var render = function() {
                     data: _vm.yourownresults,
                     smooth: true,
                     fill: true,
-                    className: "yourownresults"
+                    className: "cumulative"
                   }
                 ],
                 grid: {

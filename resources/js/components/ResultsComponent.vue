@@ -7,7 +7,7 @@
                         data: yourownresults,
                         smooth: true,
                         fill: true,
-                        className: 'yourownresults'
+                        className: 'cumulative'
                     }
                 ]"
                 :grid="{
