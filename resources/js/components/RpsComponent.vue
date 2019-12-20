@@ -2,8 +2,10 @@
     <div class="rps-component position-relative">
         <div class="row w-100 overflow-hidden h-100">
             <div class="col-2 wincountcontainer d-flex flex-column justify-content-center align-items-center">
-                <span class="contestant"> Computer </span>
-                <span class="wincounter">{{ computerwins }}</span>
+                <div class="computer d-flex flex-column justify-content-center align-items-center">
+                    <span class="contestant"> Computer </span>
+                    <span class="wincounter">{{ computerwins }}</span>
+                </div>
             </div>
             <div class="col-8 d-flex flex-column justify-content-center align-items-center h-100">
                 <svg class="img-fluid" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -412,8 +414,10 @@
                 <br>
             </div>
             <div class="col-2 wincountcontainer d-flex flex-column justify-content-center align-items-center">
-                <span class="contestant"> You </span>
-                <span class="wincounter">{{ humanwins }}</span>
+                <div class="human d-flex flex-column justify-content-center align-items-center">
+                    <span class="contestant"> You </span>
+                    <span class="wincounter">{{ humanwins }}</span>
+                </div>
             </div>
         </div>
         <div class="options d-flex">

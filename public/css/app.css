@@ -11369,11 +11369,38 @@ body {
 
 .rps-component {
   height: 70vh;
+  padding: 0 2vw;
 }
 
 .results-component {
   padding: 1vh 2vw;
   height: 23vh;
+}
+
+.wincountcontainer {
+  padding: 1vw;
+}
+
+.wincountcontainer .contestant {
+  font-size: 1.2vw;
+}
+
+.wincountcontainer .wincounter {
+  font-size: 4vw;
+}
+
+.wincountcontainer .computer {
+  background: rgba(240, 113, 108, 0.1);
+  color: #e92e27;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
+}
+
+.wincountcontainer .human {
+  background: rgba(69, 154, 210, 0.1);
+  color: #2772a3;
+  padding: 2vw 4vw;
+  border-radius: 1vw;
 }
 
 .enabled.clickable,
@@ -11435,10 +11462,6 @@ body {
 
 .ropasicontainer.enabled:hover > .ropasiback {
   fill: #459ad2;
-}
-
-.wincounter {
-  font-size: 4rem;
 }
 
 .resultnotification {

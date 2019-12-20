@@ -2499,6 +2499,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RpsComponent",
   props: ['rps_id', 'computerscore', 'humanscore'],
@@ -38319,11 +38323,20 @@ var render = function() {
             "col-2 wincountcontainer d-flex flex-column justify-content-center align-items-center"
         },
         [
-          _c("span", { staticClass: "contestant" }, [_vm._v(" Computer ")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "wincounter" }, [
-            _vm._v(_vm._s(_vm.computerwins))
-          ])
+          _c(
+            "div",
+            {
+              staticClass:
+                "computer d-flex flex-column justify-content-center align-items-center"
+            },
+            [
+              _c("span", { staticClass: "contestant" }, [_vm._v(" Computer ")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "wincounter" }, [
+                _vm._v(_vm._s(_vm.computerwins))
+              ])
+            ]
+          )
         ]
       ),
       _vm._v(" "),
@@ -38836,11 +38849,20 @@ var render = function() {
             "col-2 wincountcontainer d-flex flex-column justify-content-center align-items-center"
         },
         [
-          _c("span", { staticClass: "contestant" }, [_vm._v(" You ")]),
-          _vm._v(" "),
-          _c("span", { staticClass: "wincounter" }, [
-            _vm._v(_vm._s(_vm.humanwins))
-          ])
+          _c(
+            "div",
+            {
+              staticClass:
+                "human d-flex flex-column justify-content-center align-items-center"
+            },
+            [
+              _c("span", { staticClass: "contestant" }, [_vm._v(" You ")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "wincounter" }, [
+                _vm._v(_vm._s(_vm.humanwins))
+              ])
+            ]
+          )
         ]
       )
     ]),
@@ -52327,8 +52349,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\zeronothingzero\Code\ropasi\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\zeronothingzero\Code\ropasi\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Code\rps\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Code\rps\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

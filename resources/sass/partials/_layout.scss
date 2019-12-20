@@ -11,9 +11,35 @@ body {
 
 .rps-component {
     height: 70vh;
+    padding: 0 2vw;
 }
 
 .results-component {
     padding: 1vh 2vw;
     height: 23vh;
+}
+
+.wincountcontainer {
+    padding: 1vw;
+    .contestant {
+        font-size: 1.2vw;
+    }
+    .wincounter {
+        font-size: 4vw;
+    }
+    .computer {
+        //background: #79bcff;
+        //border: 1px solid #F0716C;
+        background: rgba(#F0716C, 0.1);
+        color: darken(#F0716C, 15%);
+        padding: 2vw 4vw;
+        border-radius: 1vw;
+    }
+    .human {
+        //border: 1px solid #459ad2;
+        background: rgba(#459ad2, 0.1);
+        color: darken(#459ad2, 15%);
+        padding: 2vw 4vw;
+        border-radius: 1vw;
+    }
 }
